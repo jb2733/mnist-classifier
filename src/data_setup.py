@@ -1,12 +1,13 @@
 import torch
 from torch.utils.data import DataLoader
 from torchvision import datasets, transforms
+import matplotlib.pyplot as plt
 
 def get_dataloaders(data_dir="./data", batch_size=64):
 
     transform = transforms.Compose([
     transforms.ToTensor(),
-    transforms.Normalize((0.1307,), (0.3081,))  # mean and std of MNIST
+    transforms.Normalize((0.1307,), (0.3081,)) 
     ])
 
     train_dataset = datasets.MNIST(root="./data", train=True, download=True, transform=transform)
